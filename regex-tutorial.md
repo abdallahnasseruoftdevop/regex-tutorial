@@ -26,12 +26,19 @@ Regular expressions are a powerful tool that can greatly simplify string validat
 ## Regex Components
 
 ### Anchors
+The anchor is what starts and ends the regular expression. In the matching email code,
 
-Anchors include symbols like a caret and a dollar sign at the end of the string or \A letter to describe word boundaries or lack thereof. The \letter means being a or end of a string.
-About anchors, an example of an anchor would be a carrot a $. Anchors or a way of telling you where you are at, so basically, is it that start or the end? \A refers to the start of a string.
-It is probably important to note as we start to talk about anything to do with regex that regex can vary a little bit depending on which language you are looking at. Some characters are the same across multiple languages and have the same meaning, but that is not true for all of them, so it is to find good references. In the documentation I looked at, some symbols or characters or tokens had notes with them saying all engines except JavaScript, or this except for Ruby or all of these are the same depending on the language, so it is important to watch out for that.
-Quantifiers
-Examples of regular expressions quantifiers are *, +, ?, {3}, {4,7}, {5,}.
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/,
+
+the anchors are the ^ and the $. This code specifically is saying that we are looking for something that starts with
+
+^([a-z0-9_\.-]+)
+
+we will define what everything inside the parentheses later in this tutorial, but what the anchor means is that if we are to find a match it has follow those initial guidelines. It also has to end with
+
+.([a-z\.]{2,6})$.
+
+So, it must start and end with the given parameters within the code. If it does not, then it is not a match.
 
 ### Quantifiers
 
@@ -51,9 +58,7 @@ this would make it so that you were requesting to look for all three of those di
 ### Character Classes
 
 Character Classes
-An example of character class would be a-z or A-Z -
-when you see this in a regular expression, it is not just talking about finding a time frame see it is saying find anything, or you can look through anything that falls in the alphabet, so anything between A-to-Z could be any one of those characters you could use this A-to-Z, or you could also think about numbers, that is a possibility with numbers as well
-
+\d is present in the given matching email code and what it will match a single letter character, a-z, after the @ sign in the email address. Basically ensuring that a letter is matched after the @ in the email and not a number or special character.
 
 
 ## Author
